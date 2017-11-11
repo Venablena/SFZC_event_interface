@@ -6,5 +6,8 @@ function allEvents() {
         })
         content = content.join(' ')
         document.querySelector('#view').innerHTML = content
+        document.querySelectorAll('.edit').forEach(link => {
+          link.addEventListener('click', updateForm)
+        })
     })
   }

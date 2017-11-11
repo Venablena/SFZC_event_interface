@@ -1,7 +1,7 @@
 function formTemplate (method, item) {
   const btnTxt = method === 'POST' ? 'Create New Event' : 'Update Event'
   return `
-    <form id="event-form">
+    <form id="event-form${item.id}">
       <div class="form-group">
         <label for="title">Event Title</label>
         <input type="text" class="form-control" id="event_title" value="${item.name}">
@@ -27,6 +27,7 @@ function formTemplate (method, item) {
         <textarea type="text" rows="12" class="form-control" id="brief">${item.brief}</textarea>
       </div>
       <button type="submit" class="btn btn-info btn-large">${btnTxt}</button>
+      <button type="button" class="btn btn-link" id="cancel">Cancel</button>
     </form>
   `
 }

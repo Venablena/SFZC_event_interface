@@ -10,7 +10,7 @@ function eventTemplate (item) {
       <aside class="my-4">
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link" id="edit" href="#/posts/${item.id}/edit">Edit</a>
+            <a class="nav-link edit" id="${item.id}" href="#/posts/${item.id}/edit">Edit</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-danger" id="delete" href="#">Delete</a>
