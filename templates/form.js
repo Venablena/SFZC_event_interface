@@ -1,7 +1,7 @@
-function formTemplate (method, item={ id: '', name: '', date: '', timeStart: '', timeEnd: '', center: '', brief: '', type: '' }) {
+function formTemplate (method, item) {
   const btnTxt = method === 'POST' ? 'Create New Event' : 'Update Event'
   return `
-    <form id="event-form" action="/events/${item.id}">
+    <form id="event-form">
       <div class="form-group">
         <label for="title">Event Title</label>
         <input type="text" class="form-control" id="event_title" value="${item.name}">
@@ -13,6 +13,8 @@ function formTemplate (method, item={ id: '', name: '', date: '', timeStart: '',
         <input type="text" class="form-control" id="timeStart" value="${item.timeStart}">
         <label for="timeEnd">End time</label>
         <input type="text" class="form-control" id="timeEnd" value="${item.timeEnd}">
+        <label for="timeEnd">How often does this event occur?</label>
+        <input type="text" class="form-control" id="frequency" value="${item.frequency}">
       </div>
       <div class="form-group">
         <label for="title">Center</label>
@@ -22,9 +24,10 @@ function formTemplate (method, item={ id: '', name: '', date: '', timeStart: '',
       </div>
       <div class="form-group">
         <label for="title">Description</label>
-        <textarea type="text" rows="6" class="form-control" id="brief">${item.brief}</textarea>
+        <textarea type="text" rows="12" class="form-control" id="brief">${item.brief}</textarea>
       </div>
       <button type="submit" class="btn btn-info btn-large">${btnTxt}</button>
     </form>
   `
 }
+// <form id="event-form" action="/events/${item.id}">

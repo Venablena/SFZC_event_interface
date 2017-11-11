@@ -1,21 +1,33 @@
-function createEvent (item) {
+function createEvent (event) {
   event.preventDefault()
-  const title = document.querySelector('#title').value
-  const content = document.querySelector('#content').value
+  const name = document.querySelector('#event_title').value
+  const date = document.querySelector('#date').value
+  const timeStart = document.querySelector('#timeStart').value
+  const timeEnd = document.querySelector('#timeEnd').value
+  const center = document.querySelector('#center').value
+  const type = document.querySelector('#type').value
+  const brief = document.querySelector('#brief').value
+  const frequency = document.querySelector('#frequency').value
 
-  Post.create({ title, content })
-  .then(({ data: { post } }) => {
-    window.location.hash = `#/posts/${post.id}`
-    homeView.init()
+  console.log(name, date, timeStart, timeEnd, center, brief, type);
+  Request.create('body')
+  // Request.create(name, date, timeStart, timeEnd, center, brief, type, frequency )
+  .then(({ data: item}) => {
+    console.log(item);
+    // window.location.hash = `#/posts/${post.id}`
+    allEvents()
   })
   .catch(error => {
     console.error(error.response.data.error)
   })
 }
 
-window.newPostView = {
-  init (post) {
-    document.querySelector('#view').innerHTML = formTemplate('POST')
-    document.querySelector('#post-form').addEventListener('submit', createPost)
+window.newEventView = {
+  init (item) {
+    window.location.hash = '#/events/new'
+    document.querySelector('#view').innerHTML = formTemplate('POST', item={ id: 'test', name: 'test', date: 'test', timeStart: 'test', timeEnd: 'test', center: 'test', brief: 'test', type: 'test', frequency: 'test' })
+    document.querySelector('#event-form').addEventListener('submit', createEvent)
   }
 }
+
+// console.error(error.response.data.error)
