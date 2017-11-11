@@ -2,7 +2,7 @@ function updateForm(event){
   id = event.target.id
   Request.find(id)
   .then((result) =>{
-    document.querySelector("#view").innerHTML = formTemplate('PUT', result.data)
+    document.querySelector("#view").innerHTML = formTemplate('PATCH', result.data)
     document.querySelector(`#event-form${id}`).addEventListener('submit', updateEvent)
     document.querySelector('#cancel').addEventListener('click', allEvents)
   })

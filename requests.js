@@ -15,6 +15,6 @@ window.Request = {
     return axios.delete(`${url}/${id}`)
   },
   update (id, body) {
-    return axios.put(`${url}/${id}`, body)
+    return axios.patch(`${url}/${id}`, body)
   }
 }
