@@ -1,5 +1,5 @@
 function formTemplate (method, item={ id: '', name: '', date: '', timeStart: '', timeEnd: '', center: '', brief: '', type: '' }) {
-  const btnTxt = method === 'POST' ? 'Create New Post' : 'Update Post'
+  const btnTxt = method === 'POST' ? 'Create New Event' : 'Update Event'
   return `
     <form id="event-form" action="/events/${item.id}">
       <div class="form-group">

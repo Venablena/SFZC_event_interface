@@ -1,12 +1,8 @@
+console.log('requests running');
 const url = 'http://localhost:3000/events'
 
-// axios.get(`${url}`)
-//   .then(result => {
-//     document.querySelector('#event-container').innerHTML = result
-//   })
-
-window.Events = {
-  index () {
+window.Request = {
+  displayAll () {
     return axios.get(`${url}`)
   },
   find (id) {

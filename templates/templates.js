@@ -7,11 +7,6 @@ function getAll() {
   // })
 }
 
-function readDB(){
-  const post = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-  return post.data
-}
-
 function generatePosts(data){
   let array = data.map(item => {
     const snippet = item.body.slice(0, 255) + '...'

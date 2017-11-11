@@ -1,20 +1,19 @@
 function eventTemplate (item) {
-  // const converter = new showdown.Converter({ openLinksInNewWindow: true })
-  // const content = converter.makeHtml(post.content)
   return `
     <section>
       <header>
-        <h2>${item.name}</h2>
+        <h3>${item.name}</h3>
+        <h5>${item.date} // ${item.timeStart} - ${item.timeEnd} //  ${item.center}</h5>
         <hr>
       </header>
       <article>${item.brief}</article>
       <aside class="my-4">
         <ul class="nav justify-content-end">
           <li class="nav-item">
-            <a class="nav-link" id="edit-post" href="#/posts/${item.id}/edit">Edit</a>
+            <a class="nav-link" id="edit" href="#/posts/${item.id}/edit">Edit</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" id="delete-post" href="#">Delete</a>
+            <a class="nav-link text-danger" id="delete" href="#">Delete</a>
           </li>
         </ul>
       </aside>
