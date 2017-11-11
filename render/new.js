@@ -9,12 +9,8 @@ function createEvent (event) {
   const brief = document.querySelector('#brief').value
   const frequency = document.querySelector('#frequency').value
 
-  console.log(name, date, timeStart, timeEnd, center, brief, type);
-  Request.create('body')
-  // Request.create(name, date, timeStart, timeEnd, center, brief, type, frequency )
+  Request.create({ name, date, timeStart, timeEnd, center, brief, type, frequency })
   .then(({ data: item}) => {
-    console.log(item);
-    // window.location.hash = `#/posts/${post.id}`
     allEvents()
   })
   .catch(error => {
@@ -29,5 +25,3 @@ window.newEventView = {
     document.querySelector('#event-form').addEventListener('submit', createEvent)
   }
 }
-
-// console.error(error.response.data.error)
