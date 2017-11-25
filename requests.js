@@ -1,5 +1,4 @@
-console.log('requests running');
-const url = 'http://localhost:3000/events'
+const url = 'https://sfzc-calendar.herokuapp.com/events'
 
 window.Request = {
   displayAll () {
