@@ -12,7 +12,7 @@ function createEvent (event) {
 
 window.newEventView = {
   init (item) {
-    document.querySelector('#view').innerHTML = formTemplate('POST', item={ id: '', name: '', date: '', timeStart: '', timeEnd: '', center: '', brief: '', type: '', frequency: '' })
+    document.querySelector('#view').innerHTML = formTemplate('POST', item={ id: '', name: '', date: '', timeStart: '', timeEnd: '', center: 'CC', brief: '', type: '', frequency: '' })
     document.querySelector('#event-form').addEventListener('submit', createEvent)
     document.querySelector('#cancel').addEventListener('click', allEvents)
   }

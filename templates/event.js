@@ -13,7 +13,7 @@ function eventTemplate (item) {
             <a class="nav-link edit" id="${item.id}" href="#/posts/${item.id}/edit">Edit</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-danger" id="delete" href="#">Delete</a>
+            <a class="nav-link text-danger delete" id="${item.id}" href="#">Delete</a>
           </li>
         </ul>
       </aside>

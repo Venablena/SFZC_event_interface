@@ -10,10 +10,18 @@ function allEvents() {
         document.querySelectorAll('.edit').forEach(link => {
           link.addEventListener('click', updateForm)
         })
+        document.querySelectorAll('.delete').forEach(link => {
+          link.addEventListener('click',(event) => deleteEvent(event.target.id))
+        })
     })
   }
 
   function activateBtn(button){
     button.classList.remove('invisible')
     button.addEventListener('click', newEventView.init)
+  }
+
+  function deleteEvent(id){
+    Request.destroy (id)
+      .then(() => allEvents())
   }
