@@ -1,4 +1,5 @@
 function allEvents() {
+  activateBtn(document.querySelector('#create-event'))
     Request.displayAll()
       .then(({ data: eventsArray}) => {
         let content = eventsArray.map(item => {
@@ -10,4 +11,9 @@ function allEvents() {
           link.addEventListener('click', updateForm)
         })
     })
+  }
+
+  function activateBtn(button){
+    button.classList.remove('invisible')
+    button.addEventListener('click', newEventView.init)
   }
