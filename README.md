@@ -1,8 +1,8 @@
 # SFZC_event_interface
 >Admin interface to post, edit and delete events on SFZC calendar 
 
-This is a full-stack project providing an admin view of events in the San Francisco Zen Center calendar. 
-It uses Node JS to communicate with a PostgreSQL database. 
+This is a full-stack MVC-style project providing an admin view of events in the San Francisco Zen Center calendar. 
+The backend is built with Node JS and has a PostgreSQL database, the interface is made pretty with Bootstrap while Ajax calls are handled by Axios. 
 
 Users can:
 
